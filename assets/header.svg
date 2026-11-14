@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-labelledby="title desc">
+  <title id="title">Erkam Yiğit Aydın</title>
+  <desc id="desc">Animated banner: marbled colour blobs drift behind the name while a drop falls and ripples on the right.</desc>
+  <defs>
+    <clipPath id="card"><rect width="1200" height="320" rx="24"/></clipPath>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4a18b"/>
+      <stop offset="1" stop-color="#6d7fd6"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#16191f" stop-opacity=".92"/>
+      <stop offset=".55" stop-color="#16191f" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#16191f" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .ui { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif; }
+      .kicker { fill: #8fb3e6; font-size: 19px; font-weight: 600; letter-spacing: 4px; }
+      .name { fill: #f2eee6; font-size: 64px; font-weight: 700; letter-spacing: -1px; }
+      .line { fill: #e4ddcf; font-size: 31px; font-weight: 450; opacity: 0;
+              animation: cycle 16s ease-in-out infinite both; }
+      .l2 { animation-delay: 4s; } .l3 { animation-delay: 8s; } .l4 { animation-delay: 12s; }
+      @keyframes cycle {
+        0%   { opacity: 0; transform: translateY(14px); }
+        4%   { opacity: 1; transform: translateY(0); }
+        21%  { opacity: 1; transform: translateY(0); }
+        25%  { opacity: 0; transform: translateY(-14px); }
+        100% { opacity: 0; transform: translateY(-14px); }
+      }
+
+      .blob { transform-box: fill-box; transform-origin: center; }
+      .b1 { animation: d1 19s ease-in-out infinite alternate; }
+      .b2 { animation: d2 23s ease-in-out infinite alternate; }
+      .b3 { animation: d3 17s ease-in-out infinite alternate; }
+      .b4 { animation: d4 29s ease-in-out infinite alternate; }
+      @keyframes d1 { to { transform: translate(-140px, 60px) scale(1.25); } }
+      @keyframes d2 { to { transform: translate(120px, -50px) scale(.8); } }
+      @keyframes d3 { to { transform: translate(-90px, -70px) scale(1.2); } }
+      @keyframes d4 { to { transform: translate(160px, 40px) scale(1.1); } }
+
+      .falling { animation: fall 4.8s cubic-bezier(.55,0,.85,.4) infinite; }
+      @keyframes fall {
+        0%   { transform: translateY(-120px); opacity: 0; }
+        12%  { opacity: 1; }
+        58%  { transform: translateY(0); opacity: 1; }
+        62%  { transform: translateY(6px) scaleY(.6); opacity: 0; }
+        100% { transform: translateY(6px); opacity: 0; }
+      }
+      .ring { fill: none; stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center;
+              animation: ripple 4.8s ease-out infinite; }
+      .r2 { animation-delay: .35s; } .r3 { animation-delay: .7s; }
+      @keyframes ripple {
+        0%, 58% { opacity: 0; transform: scale(.15); }
+        62%     { opacity: .9; }
+        100%    { opacity: 0; transform: scale(1.6); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .b1, .b2, .b3, .b4, .falling, .ring { animation: none; }
+        .line { animation: none; opacity: 0; } .l1 { opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="320" fill="#16191f"/>
+
+    <!-- marbled blobs (ebru) -->
+    <g filter="url(#soft)" opacity=".85">
+      <circle class="blob b1" cx="980"  cy="70"  r="150" fill="#6d7fd6"/>
+      <circle class="blob b2" cx="760"  cy="280" r="130" fill="#f4a18b"/>
+      <circle class="blob b3" cx="1120" cy="260" r="120" fill="#d98aa0"/>
+      <circle class="blob b4" cx="520"  cy="40"  r="110" fill="#3a5a8a"/>
+    </g>
+    <rect width="1200" height="320" fill="url(#fade)"/>
+
+    <!-- drop + ripples -->
+    <g transform="translate(1010 188)">
+      <g class="falling">
+        <path d="M0 -38 C 14 -18, 22 -6, 22 6 A 22 22 0 0 1 -22 6 C -22 -6, -14 -18, 0 -38 Z" fill="url(#drop)"/>
+        <ellipse cx="-7" cy="2" rx="4" ry="7" fill="#fbf8f1" opacity=".55"/>
+      </g>
+      <g transform="translate(0 34)">
+        <ellipse class="ring r1" rx="70" ry="16" stroke="#f4a18b"/>
+        <ellipse class="ring r2" rx="70" ry="16" stroke="#a9c7f0"/>
+        <ellipse class="ring r3" rx="70" ry="16" stroke="#6d7fd6"/>
+      </g>
+    </g>
+
+    <!-- text -->
+    <g class="ui" transform="translate(72 0)">
+      <text class="kicker" y="104">HI, I'M</text>
+      <text class="name" y="172">Erkam Yiğit Aydın</text>
+      <text class="line l1" y="232">Full-stack developer, <tspan font-weight="600" fill="#f4a18b">web &amp; Apple platforms</tspan></text>
+      <text class="line l2" y="232">Building <tspan font-weight="600" fill="#f4a18b">Damla</tspan>, a Liquid Glass hub for the Mac notch</text>
+      <text class="line l3" y="232">Making <tspan font-weight="600" fill="#f4a18b">3D design tools</tspan> that run in the browser</text>
+      <text class="line l4" y="232"><tspan font-weight="600" fill="#f4a18b">Swift</tspan> · SwiftUI · TypeScript · Next.js · Three.js</text>
+    </g>
+  </g>
+</svg>
