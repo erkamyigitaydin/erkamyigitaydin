@@ -47,7 +47,7 @@ brew install --cask erkamyigitaydin/tap/damla
 |---|---|
 | 💧 **Damla** | [v0.8.11](https://github.com/erkamyigitaydin/Damla/releases/tag/v0.8.11) shipped 3 weeks ago |
 | 📈 **Last 30 days** | **92** contributions across **15** days |
-| 🔥 **Streak** | **3** days running · best this year **16** |
+| 🔥 **Best streak** | **16** days in a row this year |
 | 📅 **Busiest day** | Thursday |
 <!-- LIVE:END -->
 
